@@ -1,17 +1,7 @@
 {
-    "mislamsohag@gmail.com": {
-        "username": "sohag",
+    "hamim@gmail.com": {
+        "username": "hamim@gmail.com",
         "password": "123",
-        "role": ""
-    },
-    "mazharulislamsohag02@gmail.com": {
-        "username": "Karim",
-        "password": "123",
-        "role": ""
-    },
-    "admin@mail.com": {
-        "username": "admin",
-        "password": "123456",
         "role": ""
     }
 }
