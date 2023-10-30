@@ -2,7 +2,7 @@
 
 session_start();
 
-$usersFile = 'users.json'; //এই নামে ফাইল তৈরি হাবে।
+$usersFile = 'users.json'; //এই নামে ফাইল তৈরি হবে।
 
 // এবার আমি উপরের ফাইলটি আছেকিনা তা চেক করব। যদি থাকে তবে এককাজ করব, আর না থাকলে অন্য কাজ করব।
 $users = file_exists($usersFile) ? json_decode(file_get_contents($usersFile), true) : [];
@@ -29,7 +29,7 @@ if (isset($_POST['registration'])) {
         } else {
             $users[$email] = [
                 'username' => $username,
-                'password' => $password,
+                'password' => md5($password),
                 'role' => ''
             ];
 

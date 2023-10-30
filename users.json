@@ -1,7 +1,12 @@
 {
-    "hamim@gmail.com": {
-        "username": "hamim@gmail.com",
-        "password": "123",
-        "role": ""
+    "nusrat@gmail.com": {
+        "username": "nusrat",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "role": "user"
+    },
+    "israt@mail.com": {
+        "username": "israt",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "role": "manager"
     }
 }

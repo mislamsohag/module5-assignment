@@ -3,7 +3,7 @@ session_start();
 
 $users = json_decode(file_get_contents('users.json'), true);
 
-echo $_SESSION["email"];
+// echo $_SESSION["email"];
 if (!$users[$_SESSION['email']]) {  //এখানে মূলত চেক করছি এই মেইলটি $users নামক variable নাই কিনা।
     echo "email not found";
 }

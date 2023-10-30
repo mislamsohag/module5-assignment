@@ -3,6 +3,8 @@ session_start();
 // session_destroy();
 
 $users=json_decode(file_get_contents('users.json'),true);
+
+
 // echo $_SESSION["email"];
 // echo $_SESSION["password"];
 
@@ -14,6 +16,7 @@ if(!$users[$_SESSION['email']]){  //এখানে মূলত চেক ক�
 if (isset($_POST['email']) && isset($_POST['password'])) {
     if ($_POST['email'] == $_SESSION['email'] && $_POST['password']== $_SESSION['password']) {
         $_SESSION['loggedin'] = true;
+        header('Location: update.php');
     } else {
         $error=true;
         $_SESSION['loggedin'] = false;
