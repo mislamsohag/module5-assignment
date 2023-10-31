@@ -4,7 +4,7 @@ session_start();
 $users = json_decode(file_get_contents('users.json'), true);
 
 // echo $_SESSION["email"];
-if (!$users[$_SESSION['email']]) {  //এখানে মূলত চেক করছি এই মেইলটি $users নামক variable নাই কিনা।
+if (!$users[$_SESSION['email']]) {  
     echo "email not found";
 }
 
@@ -16,6 +16,7 @@ if (isset($_POST['update_role'])) {
     if (isset($users[$user_email])) {
         $users[$user_email]['role'] = $new_role;
         file_put_contents('users.json', json_encode($users, JSON_PRETTY_PRINT));
+        header('Location:adminPanel.php');
     }
 }
 ?>

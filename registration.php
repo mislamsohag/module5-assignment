@@ -2,25 +2,26 @@
 
 session_start();
 
-$usersFile = 'users.json'; //এই নামে ফাইল তৈরি হবে।
+// create a file with this name
+$usersFile = 'users.json';
 
-// এবার আমি উপরের ফাইলটি আছেকিনা তা চেক করব। যদি থাকে তবে এককাজ করব, আর না থাকলে অন্য কাজ করব।
+// now check created file is here or not
 $users = file_exists($usersFile) ? json_decode(file_get_contents($usersFile), true) : [];
 
-// এই function টি পরের একটি কাজের জন্য ঘোষণা করা হলো।
+// create a function for save all information
 function saveUsers($users, $file)
 {
     file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT));
 }
 
-// রেজিষ্ট্রেশন ফরম input field হ্যান্ডলিং
+// input field
 if (isset($_POST['registration'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
 
-    //Validaton;
+    //form validaton;
     if (empty($username) || empty($email) || empty($password)) {
         $errorMsg = 'Please fill all the field.';
     } else {
@@ -35,10 +36,10 @@ if (isset($_POST['registration'])) {
 
             saveUsers($users, $usersFile);
 
-            // এখানে session এর মাধ্যমে email টাকে update page এ নিয়ে যাওয়া হচ্ছে।
+            // session setup with email and go to login page
             $_SESSION['email'] = $email;
             $_SESSION['password'] = $password;
-            header('Location: login.php'); // এর মাধ্যমে page লিংক করা হচ্ছে।
+            header('Location: login.php'); // page linking
         }
     }
 }

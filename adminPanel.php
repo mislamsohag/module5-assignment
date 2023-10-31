@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 
 ?>
@@ -25,7 +26,6 @@
                             <tr>
                                 <th class="px-4 py-4">User Name</th>
                                 <th class="px-4 py-3">Email</th>
-                                <th class="px-4 py-3">Password</th>
                                 <th class="px-4 py-3">Role</th>
                                 <th class="px-4 py-3">Action</th>
                             </tr>
@@ -34,7 +34,6 @@
                             <tr class="border-b dark:border-gray-700">
                                 <th class="px-4 py-3 font-medium text-gray-900">Mazharul</th>
                                 <td class="px-4 py-3">mislamsohag@gmail.com</td>
-                                <td class="px-4 py-3">123456</td>
                                 <td class="px-4 py-3">Admin</td>
                                 
                                 <td class="px-4 py-3 flex items-center justify-end">

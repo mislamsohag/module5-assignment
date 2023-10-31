@@ -4,12 +4,11 @@ session_start();
 
 $users=json_decode(file_get_contents('users.json'),true);
 
-
 // echo $_SESSION["email"];
 // echo $_SESSION["password"];
 
 $error=false;
-if(!$users[$_SESSION['email']]){  //এখানে মূলত চেক করছি এই মেইলটি $users নামক variable নাই কিনা।
+if(!$users[$_SESSION['email']]){  
     echo "email not found";
 }
 
@@ -54,8 +53,7 @@ if (isset($_POST['logout'])) {
                         if ($_SESSION['loggedin']==true) {
                             echo "Hello Mr./Mrs. your login was success!";
                             // header('Location: update.php');
-                        } else {
-                            // echo sha1('rabbit');
+                        } else {                            
                             echo "Hello User Please login below";
                         }
                         ?>
